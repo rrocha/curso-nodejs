@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<body>
+		<h1>Listagem de produtos</h1>
+		<input type="button" value="Novo" onclick="window.location.href='/produtos/form';">
+		<table border="1px">	
+			<tr>
+				<td>id</td>
+				<td>titulo</td>
+				<td>descricao</td>
+				<td>preco</td>
+				<td></td>
+			</tr>
+			<%for(var i=0; i<lista.length;i++){%>
+				<tr>
+					<td><%=lista[i].id%></td>
+					<td><%=lista[i].titulo%></td>
+					<td><%=lista[i].descricao%></td>
+					<td><%=lista[i].preco%></td>
+					<td>
+						<a href="/produtos/remove?id=<%=lista[i].id%>" data-method="post">Remover</a>
+					</td>
+				</tr>
+			<%}%>
+		</table>
+	</body>
+</html>
